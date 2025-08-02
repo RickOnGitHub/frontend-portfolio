@@ -14,7 +14,7 @@ A simple portfolio frontend built with Vite + Vue.js that connects to a headless
 ```bash
 # Clone the repository
 git clone https://github.com/RickOnGitHub/frontend-portfolio.git
-cd frontend
+cd frontend-portfolio
 
 # Install dependencies
 npm install
