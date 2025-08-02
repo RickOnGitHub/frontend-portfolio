@@ -5,13 +5,15 @@ A simple portfolio frontend built with Vite + Vue.js that connects to a headless
 ## 🚀 Quick Setup
 
 ### Prerequisites
+
 - Node.js (v16 or higher)
 - npm or yarn package manager
 
 ### Installation
+
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/RickOnGitHub/frontend-portfolio.git
 cd frontend
 
 # Install dependencies
@@ -25,6 +27,7 @@ npm run build
 ```
 
 ### Development
+
 The development server will start on `http://localhost:5173` by default.
 
 ## 🛠️ Tech Stack
@@ -36,6 +39,7 @@ The development server will start on `http://localhost:5173` by default.
 - **Development**: Hot reload, modern JavaScript features
 
 ### Font Integration
+
 - **Tomorrow**: Modern, tech-focused typography for headings
 - **Quicksand**: Clean, readable font for body text
 - Full weight support (100-900) with italic variants
@@ -59,9 +63,11 @@ npm run lint
 ## 🔧 Configuration
 
 ### Vite Configuration
+
 The project uses Vite for fast development and optimized builds. Configuration can be found in `vite.config.js`.
 
 ### API Integration
+
 API calls are configured in `src/axios.js`. Update the base URL to connect to your Laravel backend:
 
 ```javascript
@@ -69,12 +75,13 @@ API calls are configured in `src/axios.js`. Update the base URL to connect to yo
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'http://your-laravel-backend-url/api',
+  baseURL: 'http://your-laravel-backend-url/api'
   // ... other configurations
 })
 ```
 
 ## 📜 License
+
 This project is open-source and available under the MIT License.
 
 ```
@@ -92,4 +99,5 @@ copies or substantial portions of the Software.
 ```
 
 ## 💬 About the Author
+
 Rick van Oirschot – Full-stack developer focused on performance-first, cleanly structured web experiences.
