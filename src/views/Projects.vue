@@ -160,31 +160,65 @@ onMounted(() => {
     .projects-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .container {
         padding: 0 1rem;
     }
 }
 
 .project-card {
-    border: 1px solid #ddd;
+    border: 1px solid #f1f1f1;
     border-radius: 20px;
     padding: 2rem;
     background: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: default;
 }
 
-.project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
+/* .project-card:hover {
+    box-shadow: 0 3px 6px rgba(239, 156, 255, 0.25);
+} */
 
 .project-card h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: #333;
     font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 0;
+    transition: color 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border-radius: 2px;
+}
+
+.project-card h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            #b518d4,
+            #c0a9fc,
+            #8400ff,
+            #f2a6cf,
+            #fa158fdd);
+    background-size: 400% 100%;
+       animation: gradientMove 30s linear infinite;
+    transition: left 0.4s ease;
+    z-index: -1;
+    clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 100%, 0 100%);
+}
+
+.project-card:hover h2 {
+    color: #fff;
+}
+
+.project-card:hover h2::before {
+    left: 0;
 }
 
 .project-excerpt {
@@ -210,18 +244,50 @@ onMounted(() => {
 
 .tech-tag {
     display: inline-block;
-    background: #000;
+    background: linear-gradient(90deg,
+            #b518d4,
+            #c0a9fc,
+            #8400ff,
+            #f2a6cf,
+            #fa158fdd);
+    background-size: 400% 100%;
     color: #fff;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 12px;
     margin-right: 0.5rem;
     margin-bottom: 0.25rem;
+    cursor: pointer;
+    animation: gradientMove 30s linear infinite;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .tech-tag:hover {
-    background: #333;
+    transform: scale(1.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .status {

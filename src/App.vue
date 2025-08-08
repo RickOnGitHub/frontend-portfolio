@@ -88,12 +88,12 @@ const showHeader = computed(() => route.path !== '/')
     text-decoration: none;
     transition: all 0.2s;
     color: #333;
-    filter: grayscale(1);
+    filter: grayscale(0);
 }
 
 .logo-link:hover {
     opacity: 0.8;
-    filter: grayscale(0);
+    filter: grayscale(1);
 }
 
 .logo {

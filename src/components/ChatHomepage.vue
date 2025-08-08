@@ -18,12 +18,12 @@
                 <!-- Welcome message with navigation bubbles -->
                 <div class="ai-chat-message ai-chat-bot">
                     <div class="welcome-text">
-                        Hallo! Ik ben Rick's AI assistent. Ik kan je helpen navigeren door mijn portfolio en vragen
-                        beantwoorden over mijn werk.
+                        Hallo! Ik ben Rick's AI assistent. Ik kan je helpen navigeren door Ricks portfolio en vragen
+                        beantwoorden over Ricks werk.
                     </div>
                     <div class="ai-chat-suggestions">
                         <router-link to="/about" class="ai-chat-suggestion-bubble">
-                            📋 Over mij
+                            📋 Over Rick
                         </router-link>
                         <router-link to="/projects" class="ai-chat-suggestion-bubble">
                             💼 Projecten
@@ -57,7 +57,7 @@
 
             <div class="ai-chat-input-wrapper">
                 <input class="ai-chat-input" type="text" v-model="userInput" @keypress.enter="sendMessage"
-                    placeholder="Stel een vraag over mijn portfolio..." />
+                    placeholder="Stel een vraag over Ricks portfolio..." />
                 <button class="ai-chat-submit" @click="sendMessage">
                 </button>
             </div>
@@ -86,7 +86,7 @@ const portfolioData = {
         'API ontwikkeling en integratie'
     ],
     contact: {
-        email: 'rick@example.com',
+        email: 'rickvanoirschot@gmail.com',
         linkedin: 'linkedin.com/in/rickvanoirschot',
         github: 'github.com/rickvanoirschot'
     }
@@ -153,57 +153,57 @@ const getAIResponse = (message) => {
 
     if (lowerMessage.includes('skill') || lowerMessage.includes('vaardig') || lowerMessage.includes('technolog')) {
         return {
-            text: `Mijn technische vaardigheden omvatten: ${portfolioData.skills.join(', ')}. Ik ben gespecialiseerd in moderne webontwikkeling met focus op Vue.js en Laravel.`,
+            text: `Ricks technische vaardigheden omvatten: ${portfolioData.skills.join(', ')}. Hij is gespecialiseerd in moderne webontwikkeling met focus op Vue.js en Laravel.`,
             suggestions: [
-                { title: '💼 Bekijk projecten', url: '/projects' },
-                { title: '📋 Meer over mij', url: '/about' }
+                { title: '💼 Bekijk Ricks projecten', url: '/projects' },
+                { title: '📋 Meer over Rick', url: '/about' }
             ]
         }
     }
 
     if (lowerMessage.includes('ervaring') || lowerMessage.includes('werk') || lowerMessage.includes('experience')) {
         return {
-            text: `Mijn werkervaring omvat: ${portfolioData.experience.join(', ')}. Ik help bedrijven met het ontwikkelen van moderne webapplicaties.`,
+            text: `Ricks werkervaring omvat: ${portfolioData.experience.join(', ')}. Hij helpt bedrijven met het ontwikkelen van moderne webapplicaties.`,
             suggestions: [
-                { title: '💼 Projecten bekijken', url: '/projects' },
-                { title: '📞 Contact opnemen', url: '/about' }
+                { title: '💼 Ricks projecten bekijken', url: '/projects' },
+                { title: '📞 Contact opnemen met Rick', url: '/about' }
             ]
         }
     }
 
     if (lowerMessage.includes('contact') || lowerMessage.includes('email') || lowerMessage.includes('bereik')) {
         return {
-            text: `Je kunt contact met me opnemen via verschillende kanalen. Bekijk mijn contactgegevens op de About pagina voor alle opties.`,
+            text: `Je kunt contact opnemen met Rick via verschillende kanalen. Bekijk zijn contactgegevens op de "Over Rick" pagina voor alle opties.`,
             suggestions: [
-                { title: '📋 Contact info', url: '/about' },
-                { title: '💼 Projecten eerst bekijken', url: '/projects' }
+                { title: '📋 Ricks contact info', url: '/about' },
+                { title: '💼 Ricks projecten eerst bekijken', url: '/projects' }
             ]
         }
     }
 
     if (lowerMessage.includes('project') || lowerMessage.includes('portfolio') || lowerMessage.includes('werk')) {
         return {
-            text: `Ik heb aan verschillende interessante projecten gewerkt, van webapplicaties tot API ontwikkeling. Bekijk mijn projectenpagina voor een volledig overzicht!`,
+            text: `Rick heeft aan verschillende interessante projecten gewerkt, van webapplicaties tot API ontwikkeling. Bekijk zijn projectenpagina voor een volledig overzicht!`,
             suggestions: [
-                { title: '💼 Alle projecten', url: '/projects' },
-                { title: '🛠️ Mijn vaardigheden', url: '/about' }
+                { title: '💼 Alle projecten van Rick', url: '/projects' },
+                { title: '🛠️ Ricks vaardigheden', url: '/about' }
             ]
         }
     }
 
     // Default response
     return {
-        text: `Bedankt voor je vraag! Ik help je graag verder. Gebruik de navigatie bubbles hieronder of stel een specifieke vraag over mijn vaardigheden, ervaring, of projecten.`,
+        text: `Bedankt voor je vraag! Ik help je graag verder met informatie over Ricks portfolio. Gebruik de navigatie bubbles hieronder of stel een specifieke vraag over zijn vaardigheden, ervaring, of projecten.`,
         suggestions: [
-            { title: '📋 Over mij', url: '/about' },
-            { title: '💼 Projecten', url: '/projects' }
+            { title: '📋 Over Rick', url: '/about' },
+            { title: '💼 Ricks projecten', url: '/projects' }
         ]
     }
 }
 
 // Quick action methods
 const askAboutSkills = () => {
-    addMessage('Wat zijn je technische vaardigheden?', 'ai-chat-user')
+    addMessage('Wat zijn Ricks technische vaardigheden?', 'ai-chat-user')
 
     // Add typing indicator
     const typingMessage = addTypingIndicator()
@@ -216,7 +216,7 @@ const askAboutSkills = () => {
 }
 
 const askAboutContact = () => {
-    addMessage('Hoe kan ik contact met je opnemen?', 'ai-chat-user')
+    addMessage('Hoe kan ik contact opnemen met Rick?', 'ai-chat-user')
 
     // Add typing indicator
     const typingMessage = addTypingIndicator()
@@ -229,7 +229,7 @@ const askAboutContact = () => {
 }
 
 const askAboutExperience = () => {
-    addMessage('Wat is je werkervaring?', 'ai-chat-user')
+    addMessage('Wat is Ricks werkervaring?', 'ai-chat-user')
 
     // Add typing indicator
     const typingMessage = addTypingIndicator()
